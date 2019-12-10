@@ -22,3 +22,12 @@ def test_flight_add_plane():
 
     test_flight.add_plane(test_plane.id_number)
     assert test_flight.plane == '0178945'
+
+
+def test_flight_add_origin_dest():
+    test_flight = Flight()
+    test_flight.add_destination('Barcelona')
+    assert test_flight.destination == 'Barcelona'
+
+    test_flight.add_origin('London')
+    assert test_flight.origin == 'London'
