@@ -1,10 +1,7 @@
-class Passengers:
+class Passenger:
     def __init__(self, name, pass_num):
         self.name = name
         self.passport_number = pass_num
-
-    def new_passenger(self, name, pass_num):
-        pass
 
 
 class Plane:
