@@ -17,7 +17,7 @@ class Flight:
         self.passengers = []
 
     def add_plane(self, plane):
-        pass
+        self.plane = plane
 
     def add_destination(self, dest):
         self.destination = dest

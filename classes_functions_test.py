@@ -15,5 +15,10 @@ def test_plane_creation():
     test_plane = Plane('0178945')
     assert test_plane.id_number == '0178945'
 
-# def test_flight_add_plane():
-#     test_flight = Flight()
+
+def test_flight_add_plane():
+    test_flight = Flight()
+    test_plane = Plane('0178945')
+
+    test_flight.add_plane(test_plane.id_number)
+    assert test_flight.plane == '0178945'
