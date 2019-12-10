@@ -31,3 +31,10 @@ def test_flight_add_origin_dest():
 
     test_flight.add_origin('London')
     assert test_flight.origin == 'London'
+
+
+def test_flight_add_passenger():
+    test_flight = Flight()
+    new_pass = new_passenger('Joana Thompson', 'B343123')
+    test_flight.add_passenger(new_pass)
+    assert test_flight.passengers[0].name == 'Joana Thompson'
