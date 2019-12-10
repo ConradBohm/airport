@@ -6,7 +6,7 @@ def new_passenger(name, number):
     return new_pass
 
 
-def new_pass_input_validation(input_str):
+def null_input_validation(input_str):
     if not input_str.strip():
         print('You cannot leave this field blank.')
         return False
@@ -14,17 +14,17 @@ def new_pass_input_validation(input_str):
         return True
 
 
-def pass_add():
+def pass_add(passenger_list):
     while True:
         name = input('Enter a name: ')
-        if not new_pass_input_validation(name):
+        if not null_input_validation(name):
             continue
         else:
             break
 
     while True:
         number = input('Enter a passport number: ')
-        if not new_pass_input_validation(number):
+        if not null_input_validation(number):
             continue
         else:
             break
@@ -44,4 +44,14 @@ def menu_input():
     return choice
 
 
+def plane_add(plane_list):
+    while True:
+        number = input('Input plane number to be added: ')
+        if not null_input_validation(number):
+            print('Please enter in this field')
+        else:
+            break
 
+        new_plane = Plane(number)
+        plane_list.append(new_plane)
+        print('New plane added.')
