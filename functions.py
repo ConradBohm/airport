@@ -1,9 +1,9 @@
 from classes import *
-
-
-def new_passenger(name, number):
-    new_pass = Passenger(name, number)
-    return new_pass
+from calling_SQL import *
+# def new_passenger(fname, lname, number):
+#     new_pass = Passenger(fname, lname, number)
+#     new_pass.add_to_db()
+#     cursor.execute(f'insert into passengers(first_name, last_name, passport_no) values ({names[0]}, {names[1]}, {number})')
 
 
 def null_input_validation(input_str):
@@ -14,10 +14,17 @@ def null_input_validation(input_str):
         return True
 
 
-def pass_add(passenger_list):
+def pass_add():
     while True:
-        name = input('Enter a name: ')
-        if not null_input_validation(name):
+        fname = input('Enter a first name: ')
+        if not null_input_validation(fname):
+            continue
+        else:
+            break
+
+    while True:
+        lname = input('Enter a last name: ')
+        if not null_input_validation(lname):
             continue
         else:
             break
@@ -29,8 +36,12 @@ def pass_add(passenger_list):
         else:
             break
 
-    new_pass = new_passenger(name, number)
-    passenger_list.append(new_pass)
+    new_pass = Passenger(fname, lname, number)
+    new_pass.add_to_db()
+
+
+def list_pass():
+    table_passengers.print_all()
 
 
 def menu_input():
@@ -55,3 +66,5 @@ def plane_add(plane_list):
         new_plane = Plane(number)
         plane_list.append(new_plane)
         print('New plane added.')
+
+
